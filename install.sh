@@ -59,6 +59,7 @@ brew cask install font-iosevka-slab
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cp -f ./.zshrc ~/.zshrc
 
 # Install spaceshipe theme
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
