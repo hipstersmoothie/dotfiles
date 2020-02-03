@@ -1,9 +1,15 @@
 # Install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+brew cask install iterm2
+brew install bat
 brew install fzf
 (brew --prefix)/opt/fzf/install
-brew install bat
+
+brew tap homebrew/cask-fonts
+brew cask install font-iosevka
+brew cask install font-fira-code
+brew cask install font-iosevka-slab
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
