@@ -8,7 +8,6 @@ cp ./com.googlecode.iterm2.plist ~/Documents/com.googlecode.iterm2.plist
 # Instal VSCode
 brew cask install visual-studio-code-insiders
 
-
 # Install terminal utils
 brew install bat
 brew install fzf
