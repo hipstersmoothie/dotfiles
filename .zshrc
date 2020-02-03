@@ -10,8 +10,6 @@ COMPLETION_WAITING_DOTS="true"
 
 source $ZSH/oh-my-zsh.sh
 
-alias lg="lazygit"
-alias pr="hub pull-request | xargs open"
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit"
@@ -34,9 +32,7 @@ alias gcb="git checkout master && git pull && git branch --merged master | egrep
 
 alias c="code-insiders"
 alias cat="bat"
-alias ping="/Applications/prettyping"
 alias preview="fzf --preview 'bat --color \"always\" {}'"
-alias help='tldr --theme ocean'
 
 # add support for ctrl+o to open selected file in VS Code
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code-insiders {})+abort'"
