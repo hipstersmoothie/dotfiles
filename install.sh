@@ -50,6 +50,7 @@ brew install fzf
 # Install Apps
 brew cask install mark-text
 brew cask install omnifocus
+brew install gitup
 
 # Install programming fonts
 brew tap homebrew/cask-fonts
