@@ -10,7 +10,6 @@ brew cask install visual-studio-code-insiders
 cp ./vscode.settings.json $HOME/Library/Application Support/Code/User/settings.json
 
 # Install VSCode Plugins
-
 code-insiders --install-extension andys8.jest-snippets
 code-insiders --install-extension ardenivanov.svelte-intellisense
 code-insiders --install-extension bierner.markdown-preview-github-styles
@@ -47,6 +46,10 @@ code-insiders --install-extension yzhang.markdown-all-in-one
 brew install bat
 brew install fzf
 (brew --prefix)/opt/fzf/install
+
+# Install Apps
+brew cask install mark-text
+brew cask install omnifocus
 
 # Install programming fonts
 brew tap homebrew/cask-fonts
