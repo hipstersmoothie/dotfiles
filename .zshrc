@@ -51,7 +51,12 @@ gitPush()
 alias gp=gitPush
 
 # Delete merged branches
-alias gcb="git checkout master && git pull && git branch --merged master | egrep -v 'next|master' | xargs -I % sh -c 'git branch -d %; git config --get branch.%.merge && git push origin -d %'"
+gcb() {
+  branch=${1:-master}  
+  git checkout $branch;
+  git pull;
+  git branch --merged $branch | egrep -v 'next|master' | xargs -I % sh -c 'git branch -d %; git config --get branch.%.merge && git push origin -d %'
+}
 
 alias c="code-insiders"
 alias cat="bat"
