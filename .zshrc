@@ -10,10 +10,11 @@ export ZSH="/Users/alisowski/.oh-my-zsh"
 export BAT_PAGER="less -RF"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
+NODE_OPTIONS=--max_old_space_size=8192
 
 plugins=(node yarn)
 
-source ~/.oh-my-zsh/plugins/z/z.plugin.zsh
+eval "$(zoxide init zsh)"
 source ~/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -22,6 +23,7 @@ export EDITOR="/usr/local/bin/code-insiders"
 
 source $ZSH/oh-my-zsh.sh
 
+alias wallpaper="~/Documents/wallpaperchanger/wallpaperChanger.sh"
 alias cw="~/Documents/wallpaperchanger/wallpaperChanger.sh"
 
 alias restart="exec zsh"
@@ -55,7 +57,7 @@ gcb() {
   branch=${1:-master}  
   git checkout $branch;
   git pull;
-  git branch --merged $branch | egrep -v 'next|master' | xargs -I % sh -c 'git branch -d %; git config --get branch.%.merge && git push origin -d %'
+  git branch --merged $branch --format "%(refname:lstrip=2)" | egrep -Ev '^\s*(next|main|master)$' | xargs -I % sh -c 'git branch -d %; git config --get branch.%.merge && git push origin -d %'
 }
 
 alias c="code-insiders"
@@ -64,13 +66,10 @@ alias ls="exa"
 alias lss="exa -alh --icons --git-ignore"
 alias preview="fzf --preview 'bat --color \"always\" {}'"
 alias zshrc="c ~/.zshrc"
-
-
-
-
-
-
-
+alias yl="yarn lint"
+alias ys="yarn start"
+alias yss="yarn storybook"
+alias top="vtop"
 
 # $1 - the repoository to clone
 setup() {
@@ -87,14 +86,7 @@ create-branch() {
   git checkout -b $1;
 }
 
-
-
-
-
-
-function dev() {
-  z $1 && ls && c . && g;
-}
+export GIT_PAGER=""
 
 # add support for ctrl+o to open selected file in VS Code
 export FZF_DEFAULT_OPTS="--bind='ctrl-o:execute(code-insiders {})+abort'"
